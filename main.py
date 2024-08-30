@@ -54,9 +54,14 @@ def main():
     #print(f"Your balance is ${deposit}. Let's play!")
     # Get number of lines to bet on
     lines = get_no_of_lines()
-    #How much they want to bet
-    bet = get_bet()
-    total_bet = bet * lines
+    while True:
+        bet = get_bet()
+        total_bet = bet * lines
+    
+        if total_bet > balance:
+            print(f"You do not have enough funds, your current balance is ${balance}")
+        else:
+            break #could add option to increase balance/add funds here
     print(f"You are betting ${bet} on {lines} lines. You are betting ${total_bet} in this game")
     #Continue with the game logic
 
